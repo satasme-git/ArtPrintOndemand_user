@@ -1,0 +1,131 @@
+ .body p,h1,h2,h3,h4,h5,h6{
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+} 
+
+/* image */
+.signin_img img{
+    width: 100%;
+    /* border: 1px solid transparent; */
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    
+}
+.signin_img{
+    padding: 0px !important;
+    
+    
+}
+
+/* main */
+.sign_cont{
+    margin: 100px;
+    /* border: 1px solid transparent; */
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75);
+   
+}
+/* form */
+
+.signin_form img{
+    padding-top: 70px;
+    width: 150px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signin_form h3{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700 !important;
+    color: black;
+    padding: 0px 50px 0px 50px ;
+
+}
+.signin_form p{
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+    padding: 0px 50px 0px 50px ;
+}
+.signin_form h5{
+    padding: 0px 40px 20px 40px ;
+
+}
+.form_fields{
+    padding: 0px 40px 0px 40px ;
+
+}
+.submitar{
+    margin-top: 20px;
+}
+.buttonsign{
+    float: right;
+    margin-top: -8px;
+}
+.sign_checkbox{
+    float: left;
+}
+.fpwlink{
+    text-align: right;
+    font-size: 13px;
+    margin-top: -10px;
+}
+.not_reg{
+    margin-top: 70px;
+    text-align: center;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-size: 10px;
+    color: gray;
+    font-weight: 200;
+    
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgb(226, 225, 225);
+    
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .35em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .35em;
+  }
+  .inputctrl{
+      border: none !important;
+  }
+  .form_inp{
+    border-bottom: 1px solid rgb(199, 199, 199);
+  }
+  textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(126, 239, 104, 0);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(126, 239, 104, 0);
+  outline: 0 none;
+}

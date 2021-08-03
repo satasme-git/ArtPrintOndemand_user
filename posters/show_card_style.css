@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+.snip1104 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    max-height: 220px;
+    width: 100%;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.snip1104 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.snip1104 img {
+    max-width: 100%;
+    position: relative;
+    opacity: 1;
+}
+
+figure.snip1104 figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.buttontext{
+ display: block;
+    width: 203px;
+    height: 42px;
+    background: #5bc0de;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-left:17%;
+}
+.recap h4 {
+    
+    left: 40px;
+    right: 40px;
+    background: #5bc0de;
+   
+    padding: 12px 5px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+figure.snip1104 h4 span {
+    font-weight: 800;
+}
+
+figure.snip1104:before {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: #ffffff;
+    position: absolute;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transform: rotate(110deg) translateY(-50%);
+    transform: rotate(110deg) translateY(-50%);
+}
+
+figure.snip1104 a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+figure.snip1104.blue {
+    background: #518DB2;
+}
+
+figure.snip1104.blue h4 {
+    background: #518DB2;
+}
+
+figure.snip1104.red {
+    background: #581a14;
+}
+
+figure.snip1104.red h4 {
+    background: #36100c;
+}
+
+figure.snip1104.yellow {
+    background: #7f5006;
+}
+
+figure.snip1104.yellow h4 {
+    background: #583804;
+}
+
+figure.snip1104:hover img,
+figure.snip1104.hover img {
+    opacity: 1;
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+figure.snip1104:hover h4,
+figure.snip1104.hover h4 {
+    -webkit-transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+    transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+}
+
+figure.snip1104:hover:before,
+figure.snip1104.hover:before {
+    -webkit-transform: rotate(110deg) translateY(-150%);
+    transform: rotate(110deg) translateY(-150%);
+}
+
+
+.section-card {
+    /*background-color: #212121;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    margin: 0;
+    height: 100%;
+}

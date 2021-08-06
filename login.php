@@ -38,7 +38,7 @@ if(isset($_POST['submit'] )){
 
             $_SESSION["loginUser"] = $row['email_address'];
             $_SESSION['id'] = $row['cid'];
-            header('location:cart.php?msg=loged');
+            header('location:index.php?msg=loged');
         }
     }
 }

@@ -456,7 +456,7 @@ if ($_GET['id']==0) {
 
                         </li>
                     <li><a href="#"><p class="text-success"><b>Browse gettyimages</b></p></a></li>
-                    <li><a href="#"><p class="text-success"><b>About Us</b></p></a></li>
+                    <li><a href="about.php"><p class="text-success"><b>About Us</b></p></a></li>
                     <li><a href="contactUs.php"><p class="text-success"><b>Contact Us</b></p></a></li>
                     <?php
                         if(isset($_SESSION['id'])){
@@ -485,9 +485,9 @@ if ($_GET['id']==0) {
                    echo  '
                    <div class="col-md-4 abstract">
                    <div class="card">
-                        <img src="admin/uploads/image/subimage/subcategory/'.$row['pic'].'" class="card-img-top" alt="...">
+                        <img src="../admin/uploads/image/subimage/subcategory/'.$row['pic'].'" class="card-img-top" alt="...">
                         <div class="card-body abs_body">
-                        <a href="testPoster.php?image=../testPoster.php?image=admin/uploads/image/subimage/subcategory/'.$row['pic'].'&code='.$row['code'].'"><button style="width:100%" class="btn btn-info">Order</button></a>
+                        <a href="cart.php?image=../admin/uploads/image/subimage/subcategory/'.$row['pic'].'& code='.$row['code'].'& id='.$row['id'].'"><button style="width:100%" class="btn btn-info">Order</button></a>
                         </div>
                     </div>
                     <br>

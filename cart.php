@@ -5,6 +5,16 @@
 if(!isset($_SESSION['id'])){
 	header('location:login.php');
 }
+$_SESSION['img']=$_GET['image'];
+$_SESSION['img_id']=$_GET['id'];
+$_SESSION['img_code']=$_GET['code'];
+$querys = "SELECT * FROM scategory where id={$_SESSION['img_id']}";
+
+$results = $conn->query($querys);
+$row = $results->fetch_array();
+$_SESSION['img_name']=$row['name'];
+
+
 
 ?>
 <!doctype html>
@@ -16,7 +26,7 @@ if(!isset($_SESSION['id'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="http://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="./css/cart.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
         integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -35,71 +45,49 @@ if(!isset($_SESSION['id'])){
             <div class="col-md-6 product_container">
                 <h3>My Cart</h3>
                 <!-- <p>You have 3 items in your cart</p> -->
-                
                 <div class="container single_product">
-                    <?php
-                        $sql="SELECT order_id FROM orders WHERE cid={$_SESSION['id']}";
-                        $rst=mysqli_query($conn,$sql);
-                        if($rst){
-                                if(mysqli_num_rows($rst)==0){
-                                    echo "<b>Empty Cart</b>";
-                                }else{
-                                    while ($userid=mysqli_fetch_assoc($rst)){
-                                        $sql_query="SELECT * FROM  item  WHERE order_id={$userid['order_id']}";
-                                        $result=mysqli_query($conn,$sql_query);
-                                            while($item=mysqli_fetch_assoc($result)){
-                                                echo '
-                   
-                                                <div class="row product_row">
-                                                    <!-- item img -->
-                                                    <div class="col-3 cart_product_img">
-                                                        <img src="img/Product/P3.jpg" alt="">
-                                                    </div>
-                                                    <!-- /item img -->
-                                                    <!-- item content -->
-                                                    <div class="col-5 product_discription">
-                                                        <ul>
-                                                            <li>Product : '.$item["description"].'</li>
-                                                           
-                                                            <li>Special Note :'.$item["special_note"].'</li>
-                                                        </ul>
-                            
-                                                    </div>
-                                                    <!-- /item content -->
-                                                    <!-- item price -->
-                                                    <div class="col-3 product_price">
-                                                        <h3><b>$'.$item["price"].'</b></h3>
-                                                        <div class="input-group">
-                                                            <input type="button" value="-" class="button-minus" data-field="quantity">
-                                                            <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                                                            <input type="button" value="+" class="button-plus" data-field="quantity">
-                                                        </div>
-                            
-                                                    </div>
-                                                    <!-- /item price -->
-                                                    <!-- del item -->
-                                                    <div class="col-1 del_product">
-                                                        <img src="cart/deleteico.png" alt="">
-                                                    </div>
-                            
-                                                </div>
-                                                ';
-                            
-                                            }
-                                    }
+                    <div class="row product_row">
+                        <!-- item img -->
+                        <div class="col-3 cart_product_img">
+                            <img src="<?php $_SESSION['img']?>" alt="">
+                        </div>
+                        <!-- /item img -->
+                        <!-- item content -->
+                        <div class="col-5 product_discription">
+                            <ul>
+                                <li>Product :<?php echo $_SESSION['img_name']?></li>
+                                <li> Product Code :<?php echo $_SESSION['img_code']?></li>
+                                <li> Size : 804 X 1000 Mm [ $144.32 ]</li>
+                                <li>Edge Type : Black</li>
+                                <li>Timber Size : 20 Mm</li>
+                                <li>Special Note : No Special Instruction</li>
+                            </ul>
 
-                                }
-                        }else{
-                            echo "Failed";
-                        }
+                        </div>
+                        <!-- /item content -->
+                        <!-- item price -->
+                        <div class="col-3 product_price">
+                            <h3><b>$154.00</b></h3>
+                            <div class="input-group">
+                                <input type="button" value="-" class="button-minus" data-field="quantity">
+                                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                                <input type="button" value="+" class="button-plus" data-field="quantity">
+                            </div>
 
-                   
-                    ?>
+                        </div>
+                        <!-- /item price -->
+                        <!-- del item -->
+                        <div class="col-1 del_product">
+                            <img src="cart/deleteico.png" alt="">
+                        </div>
+
+                    </div>
                 </div>
 
 
 
-                
+               
+               
             </div>
             <div class="col-md-6 pay_container">
                 <div class="pay_form">

@@ -460,8 +460,8 @@ require('inc/conn.php');
 </ul>
 
                         </li>
-                    <li><a href="#">Browse gettyimages</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#getty_image">Browse gettyimages</a></li>
+                    <li><a href="about.php">About Us</a></li>
                     <li><a href="contactUs.php">Contact Us</a></li>
                     <?php
                         if(isset($_SESSION['id'])){
@@ -640,21 +640,24 @@ require('inc/conn.php');
             </div>
 
         </section>
+        <form action="getty-image-view.php" method="POST">
+        <section id="getty_image" class="getty_image">
 
-        <section class="getty_image">
 
-
-
+       
             <div class="input-group col-4 offset-md-4">
-
-                <input class="form-control from_serch" type="text" placeholder="Search" aria-label="Search">
+                        
+                <input class="form-control from_serch" type="text" placeholder="Search"  name="search" aria-label="Search">
                 <div class="input-group-append">
-                    <button><span class="input-group-text " id="basic-text1"><i class="fa fa-arrow-right"
+                    <button type="submit" name="submit"><span class="input-group-text " id="basic-text1"><i class="fa fa-arrow-right"
                                 aria-hidden="true"></i></span></button>
 
                 </div>
+               
             </div>
+          
         </section>
+         </form>
         <!-- about section -->
         <section>
             <div class="container about_sec">

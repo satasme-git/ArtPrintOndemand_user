@@ -456,7 +456,7 @@ if ($_GET['id']==0) {
 
                         </li>
                     <li><a href="#"><p class="text-success"><b>Browse gettyimages</b></p></a></li>
-                    <li><a href="#"><p class="text-success"><b>About Us</b></p></a></li>
+                    <li><a href="about.php"><p class="text-success"><b>About Us</b></p></a></li>
                     <li><a href="contactUs.php"><p class="text-success"><b>Contact Us</b></p></a></li>
                     <?php
                         if(isset($_SESSION['id'])){
@@ -486,7 +486,7 @@ if ($_GET['id']==0) {
                    echo  '
                    <div class="col-md-4 abstract">
                    <div class="card">
-                        <img src="admin/uploads/image/subimage/'.$row['pic'].'" class="card-img-top" alt="...">
+                        <img src="../admin/uploads/image/subimage/'.$rows['pic'].'" class="card-img-top" alt="...">
                         <div class="card-body abs_body">
                             <button class="btn btn-sux"><a href="showsub.php?id='.$rows['id'].'"  >'.$rows['name'].'</a></button>
                         </div>

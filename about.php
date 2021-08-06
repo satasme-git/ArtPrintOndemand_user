@@ -10,14 +10,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="css/about.css">
     <title>Hello, world!</title>
   </head>
   <body>
 <div class="container">
     <div class="row">
     <h3><b>About Our Services</b></h3>
-<img src="./img/about/Group 258.png"  class="about_main"alt="">
+<img src="img/about/Group 258.png"  class="about_main"alt="">
     </div>
 </div>
 <div class="container">

@@ -505,6 +505,14 @@ if(isset($_POST['submit'])){
 </style>
 </head>
 <body onload="gettyImageLoad()">
+<br>
+<div class="input-group" style="padding:5px;float:center">
+  <div class="form-outline">
+  <label class="form-label" for="form1"><b>Search</b></label>
+    <input type="search" id="searchId"  style="padding:5px;" class="form-control" />
+  </div>
+</div>
+<br>
 <!--Main navbar starts here-->
 <input type="hidden"  id="dataimage" value="<?php echo $_SESSION['search']?>">
 <nav class="navbar navbar-default" style="padding: 0;">
@@ -564,7 +572,7 @@ if(isset($_POST['submit'])){
                     
                     var aTag= document.createElement("a");
                       
-                    aTag.setAttribute("href", "#?image="+response[i]["display_sizes"][0]["uri"]+"&code=gettyimage");
+                    aTag.setAttribute("href", "testPoster.php?image="+response[i]["display_sizes"][0]["uri"]+"& code=gettyimage");
 
                     var mainImg = document.createElement("IMG");
                     mainImg.setAttribute("src", response[i]["display_sizes"][0]["uri"]);

@@ -1,15 +1,8 @@
 <?php
 session_start();
 require('inc/conn.php');
-
-if ($_GET['id']==0) {
-    echo "nothing";
-}else{
-    $id=$_GET['id'];
-    $query = "SELECT * FROM category where id=$id";
-    $result = $conn->query($query);
-    $c=0;
-    while($row = $result->fetch_array()){
+    
+   
 ?>
 <!doctype html>
 <html lang="en">
@@ -471,24 +464,23 @@ if ($_GET['id']==0) {
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         
-        <h3><?php echo $row['name']; ?></h3>
+        <h3>View All Product</h3>
         <div class="container">
             <div class="row">
                 
                
             
-            <?php
-                $querys = "SELECT * FROM category where mainid=$id";
-                $results = $conn->query($querys);
-                $c=0;
-                    while($rows = $results->fetch_array()){
-                        
+            <?php     
+             $query = "SELECT * FROM category where  mainid=0 ORDER BY name";
+             $result = $conn->query($query);
+            
+             while($row = $result->fetch_array()){  
                    echo  '
                    <div class="col-md-4 abstract">
                    <div class="card">
-                        <img src="../admin/uploads/image/subimage/'.$rows['pic'].'" class="card-img-top" alt="...">
+                        <img src="../admin/uploads/image/'.$row['pic'].'" class="card-img-top" alt="...">
                         <div class="card-body abs_body">
-                            <button class="btn btn-sux"><a href="showsub.php?id='.$rows['id'].'"  >'.$rows['name'].'</a></button>
+                            <button class="btn btn-sux"><a href="show.php?id='.$row['id'].'"  >'.$row['name'].'</a></button>
                         </div>
                     </div>
                     <br>
@@ -625,7 +617,3 @@ if ($_GET['id']==0) {
     </script> 
   </body>
 </html>
-<?php
-    }
-
-}?>

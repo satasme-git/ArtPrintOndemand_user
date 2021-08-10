@@ -560,45 +560,30 @@ require('inc/conn.php');
             <h3>Featured Collections</h3>
             <div class="container">
                 <div class="row">
-
+                        <?php
+                        $query5 = "SELECT * FROM category where mainid=0 ORDER BY name DESC LIMIT 3 ";
+                        $result5 = $conn->query($query5);
+                        while ($row5 = $result5->fetch_array()) {
+                            echo '
                     <div class="col-md-4 collect">
                         <div class="card">
-                            <img src="./img/Home/1.jpg" class="card-img-top" alt="...">
+                            <img src="../admin/uploads/image/'.$row5['pic'].'" class="card-img-top" alt="...">
                             <div class="card-body coll_body">
-                                <h5 class="card-title">Card title</h5>
+                                <h5 class="card-title">'.$row5['name'].'</h5>
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="col-md-4 collect">
-                        <div class="card ">
-                            <img src="./img/Home/1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body coll_body">
-                                <h5 class="card-title">Card title</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-4 collect">
-                        <div class="card">
-                            <img src="./img/Home/1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body coll_body">
-                                <h5 class="card-title">Card title</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
+                    </div>';
+                        }
+                    ?>
+                   
 
                 </div>
 
             </div>
 
             <div class="collect_botton">
-                <button class="btn">View All Product</button>
+                <a href="view_all_products.php"><button class="btn">View All Product</button></a>
             </div>
 
         </section>
@@ -607,34 +592,22 @@ require('inc/conn.php');
             <h3>Product Styles</h3>
             <div class="container">
                 <div class="row">
+                    <?php
+                     $query5 = "SELECT * FROM fcategory ";
+                     $result5 = $conn->query($query5);
+                     while ($row5 = $result5->fetch_array()){
+                         echo '
                     <div class="col-md-4 product_single">
                         <div class="card">
-                            <img src="./img/Home/sample.jpg" class="card-img-top" alt="...">
+                            <img src="../admin/uploads/category/'.$row5['pic'].'" class="card-img-top" alt="...">
                             <div class="card-body prd_body">
-                                <h5 class="card-title">Card title</h5>
+                                <h5 class="card-title">'.$row5['name'].'</h5>
                             </div>
                         </div>
 
-                    </div>
-                    <div class="col-md-4 product_single">
-                        <div class="card">
-                            <img src="./img/Home/sample.jpg" class="card-img-top" alt="...">
-                            <div class="card-body prd_body">
-                                <h5 class="card-title">Card title</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 product_single">
-                        <div class="card">
-                            <img src="./img/Home/sample.jpg" class="card-img-top" alt="...">
-                            <div class="card-body prd_body">
-                                <h5 class="card-title">Card title</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
+                    </div>';
+                     }
+                    ?>
                     
                 </div>
             </div>
